@@ -13,7 +13,7 @@
 
 
 ```sh
-git clone https://github.com/WillianJorge/SmartCare-v2
+https://github.com/souzaWill/smartCare.git
 
 npm i
 
