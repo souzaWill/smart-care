@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img class="displayed" src="assets/imgs/logo.png">
+
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input required [(ngModel)]="usuario.email" type="text"> </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Senha</ion-label>
+    <ion-input required type="password" [(ngModel)]="usuario.senha"> </ion-input>
+  </ion-item>
+  
+  <ion-item>
+      <ion-label>Permanecer Logado</ion-label>
+      <ion-checkbox [(ngModel)]="check" color="blue" checked="false"></ion-checkbox>
+  </ion-item>
+  
+  <ion-row>
+    <ion-col text-center col-12>
+      <button ion-button default color="primary" round col-5 (click)="auth()">Login</button>
+      <button ion-button default color="primary" round col-5 (click)="goToCreatePage()">Criar conta</button>
+    </ion-col>
+  </ion-row>
+
+  <button ion-button color="primary" clear col-12 (click)="goToRecoveryPage()">Esqueci minha senha</button>
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Editar Remedio</ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding>
+
+    <!-- Camera -->
+    <ion-grid>
+      <ion-row no-padding justify-content-start align-items-start>
+  
+        <ion-col ion-item no-lines no-padding text-center col-12>
+          Insira uma foto do remedio (opcional)
+          <img [src]="" alt="">
+        </ion-col>
+  
+        <ion-col ion-item no-lines no-padding text-center col-12>
+          <button ion-button clear col-6 icon-only (click)="takePicture()">
+            <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+          </button>
+          <button ion-button color="danger" col-6 clear icon-only (click)="deletePicture()">
+            <ion-icon name='trash' is-active="false"></ion-icon>
+          </button>
+        </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+  
+    <form>
+      
+      <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input type="text" value="{{nome}}"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>Quantidade</ion-label>
+        <ion-input type="number" value="{{quantidade}}" inputmode="numeric" min="0"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>Tipo</ion-label>
+        <ion-select>
+          <ion-option>Comprimido</ion-option>
+          <ion-option>Liquido</ion-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>Intervalo</ion-label>
+        <ion-input type="number" inputmode="numeric" min="0"></ion-input>
+      </ion-item>
+  
+      <ion-row>
+        <ion-col text-center col-12>
+          <button ion-button default round color="primary" (click)="teste()" >Atualizar</button>
+        </ion-col>
+      </ion-row>
+  
+    </form>
+
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Remedios</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+  <ion-list>
+
+    <ion-item-sliding #item *ngFor="let remedio of remedios" >
+      <ion-item (click)="goToEditPage(remedio)">
+        
+        <ion-thumbnail item-start>
+          <img src="{{remedio.imagem}}">
+        </ion-thumbnail>
+        <h2>Nome: {{remedio.nome}}</h2>
+        <h3>Quantidade: {{remedio.quantidade}}</h3>
+        <h4>Intervalo: {{remedio.intervalo}}</h4>
+        <h4>Tipo: {{remedio.tipo}}</h4>
+      </ion-item>
+
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="delete(remedio)">Apagar remedio</button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+
+
+  </ion-list>
+
+
+
+  <ion-fab right bottom>
+    <button ion-fab color="warning" (click)="gotToCreatePage()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

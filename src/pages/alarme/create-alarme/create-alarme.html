@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Novo Alarme</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form [formGroup]="formCreateAlarme" >
+
+    <ion-item>
+      <ion-label floating>Remedios</ion-label>
+      <ion-select [(ngModel)]="alarme.remedio_id" formControlName="remedio_id">
+        <ion-option *ngFor="let remedio of remedios" [value]="remedio.id" >{{remedio.nome}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>observacao</ion-label>
+      <ion-input type="text" [(ngModel)]="alarme.observacao" formControlName="observacao"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating>Data de início</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="alarme.data" formControlName="data" required></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Horário inicial</ion-label>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="alarme.hora" formControlName="hora" required></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>dosagem</ion-label>
+      <ion-input type="number" inputmode="numeric" min="0" [(ngModel)]="alarme.dosagem" formControlName="dosagem" required></ion-input>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col text-center col-12>
+          <button ion-button round (click)="store()" >Criar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </form>
+
+</ion-content>

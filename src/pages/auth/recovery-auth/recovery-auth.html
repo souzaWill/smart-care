@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Recuperar Senha</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <img src="assets/imgs/logo.png" class="displayed">
+
+  <form padding novalidate>
+
+    <ion-item>
+      <ion-label floating> Email de Recuperacao</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col col-12 text-center>
+        <button ion-button color="secondary" round (click)="send()">Enviar</button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+</ion-content>

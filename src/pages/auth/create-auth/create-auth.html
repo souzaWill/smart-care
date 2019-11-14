@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Criar Conta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- Camera -->
+  <ion-grid>
+    <ion-row no-padding justify-content-start align-items-start>
+      <ion-col ion-item no-lines no-padding text-center col-12>
+        Insira uma sua foto (opcional)
+        <img *ngIf="img" [src]="img" alt="">
+      </ion-col>
+
+      <ion-col ion-item no-lines no-padding text-center col-12>
+        <button ion-button clear col-6 icon-only (click)="takePicture()" >
+          <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+        </button>
+        <button ion-button color="danger" col-6 clear icon-only (click)="deletePicture()">
+          <ion-icon name='trash' is-active="false"></ion-icon>
+        </button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <form [formGroup]="formCreateAuth">
+  <!-- inputs -->
+  <ion-item>
+      <ion-label floating>
+        Nome
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="usuario.nome" formControlName="nome"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>
+        Email
+      </ion-label>
+      <ion-input required type="email" [(ngModel)]="usuario.email" formControlName="email"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating>
+        Senha
+      </ion-label>
+      <ion-input required type="password" [(ngModel)]="usuario.senha" formControlName="senha"></ion-input>
+    </ion-item>
+    
+    <ion-row>
+      <ion-col text-center col-12>
+        <button ion-button default round color="primary" (click)="validate()">Salvar</button>
+      </ion-col>
+    </ion-row>
+  </form>
+    
+
+</ion-content>
